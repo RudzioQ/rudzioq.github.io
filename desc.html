@@ -1,0 +1,58 @@
+	
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Portfolio</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="main.css">
+    </head>
+    <body>
+        <div class="content" id="content" style="opacity: 0;">
+			<h1 id="text" style="opacity: 0;">a</h1>
+			</div>
+		</div>
+        
+        <div class="credits">
+			© 2022 Kacper Mirowski | Created by&nbsp;<a href="https://github.com/RudzioQ" target="_blank">RudzioQ</a>
+		</div>
+
+        <div class="bg">
+            
+        </div>
+    </body>
+
+    <script>
+        let i = 0;
+		let text = "Coming soon...";
+		const elem = document.getElementById("text");
+
+		function type() {
+			if (i < text.length) {
+				elem.innerHTML += text.charAt(i);
+				i++;
+				setTimeout(type, 80);
+			}
+		}
+
+        let opacity_ = 0;
+		const elem2 = document.getElementById("content");
+
+		function opacity() {
+			if (opacity_ < 100) {
+				opacity_++;
+				elem2.style.setProperty('opacity', `${opacity_}%`);
+				setTimeout(opacity, 35 - (opacity_/ 1.5));
+			} else {
+				elem.innerHTML = "";
+				elem.style.setProperty('opacity', `100%`);
+				type();
+			}
+		}
+
+		setTimeout(opacity, 700);
+    </script>
+</html>
